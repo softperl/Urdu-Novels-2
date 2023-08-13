@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+
+    <!-- used for drawing widget. This permission must be granted before calling AudioWidget.show(). -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- used for notifing user that he is about to remove widget when he drags it on remove widget icon. -->
+    <!-- This permission granted by default on Android 6.0+ devices. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name="com.softperl.urdunovelscollections.MyApplication"
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:icon="@drawable/app_icon"
+        android:requestLegacyExternalStorage="true"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Splash"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.softperl.urdunovelscollections.ServiceUtil.MyIntentService"
+            android:exported="false" />
+        <service
+            android:name="com.softperl.urdunovelscollections.ServiceUtil.OreoIntentService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Base"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Favourites"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Download"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.FeedTopic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.FragmentUtil.Home"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.FragmentUtil.ReadBookType"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Viewer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Search"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.AboutUs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.ListOfAuthor"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.ReadBook"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.History"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Categories"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.CategorizedBook"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.AuthorBook"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.ListOfBooks"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.OnBoarding"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.FragmentUtil.OnBoardFragment"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.SignUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softperl.urdunovelscollections.ActivityUtil.ForgotPassword"
+            android:screenOrientation="portrait" />
+
+        <!--
+             A receiver that will receive media buttons and send as
+            intents to your MediaBrowserServiceCompat implementation.
+            Required on pre-Lollipop. More information at <data android:scheme="content" />  <data android:mimeType="application/pdf" />
+            http://developer.android.com/reference/android/support/v4/media/session/MediaButtonReceiver.html
+        -->
+        <receiver android:name="androidx.media.session.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.softperl.urdunovelscollections.ActivityUtil.LocalBookReader"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:mimeType="application/pdf"
+                    android:scheme="file" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name="com.softperl.urdunovelscollections.ActivityUtil.DeeplinkViewer"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${hostName}"
+                    android:scheme="http"
+                    android:pathPrefix="/books4u"
+                    />
+
+            </intent-filter>
+
+        </activity>
+
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
+
+        <!--  AdMob Setup -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id"/>
+
+
+    </application>
+
+</manifest>

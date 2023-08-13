@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "491913500011",
+    "firebase_url": "https://books-and-novels1.firebaseio.com",
+    "project_id": "books-and-novels1",
+    "storage_bucket": "books-and-novels1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491913500011:android:ccfec41552e914a4b5282e",
+        "android_client_info": {
+          "package_name": "com.softperl.urdunovelscollection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491913500011-9962tkuj4i85v8nomjr8p5624voc5d78.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softperl.urdunovelscollection",
+            "certificate_hash": "d722f6b0ae15872721e9201710b6c41b6e4c7978"
+          }
+        },
+        {
+          "client_id": "491913500011-grdlaitcflfpa591n9pd6lu22i4mr85i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8jbKaQ6WK6WHPGjWwEAfcFir6ISsdmdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491913500011-grdlaitcflfpa591n9pd6lu22i4mr85i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
